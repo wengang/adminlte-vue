@@ -1,4 +1,5 @@
 <template>
+  <div>
     <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
@@ -9,4 +10,5 @@
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
+  </div>
 </template>

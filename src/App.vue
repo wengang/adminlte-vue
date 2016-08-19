@@ -1,8 +1,10 @@
 <template>
-  <app-header></app-header>
-  <app-sidebar></app-sidebar>
-  <app-content></app-content>
-  <app-footer></app-footer>
+  <div>
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <app-content></app-content>
+    <app-footer></app-footer>
+  </div>
 </template>
 <script>
   import Header from './components/layout/Header.vue'
@@ -14,7 +16,7 @@
     name: 'Container',
     data: function () {
       return {
-        menu: require('./../config/menu.js') || []
+        menu: require('./config/menu.js') || []
       }
     },
     replace: false,
