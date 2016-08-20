@@ -1,4 +1,4 @@
-# vue-adminlte
+# hello-world
 
 > A Vue.js project
 
