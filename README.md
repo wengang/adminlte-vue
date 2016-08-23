@@ -1,6 +1,6 @@
-# hello-world
+# AdminLte-Vue
 
-> A Vue.js project
+> Integrated Vuejs AdminLte template
 
 ## Build Setup
 

@@ -1,4 +1,13 @@
 .DS_Store
+/output
 node_modules/
-dist/
-npm-debug.log
+*.log
+*.zip
+.idea
+.sass-cache/
+/nbproject/
+/nbproject/private/
+ad.js
+TODO
+test.html
+
