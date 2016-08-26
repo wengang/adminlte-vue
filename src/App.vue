@@ -1,9 +1,10 @@
 <template>
-  <div id='app' class="wrapper">
+  <div id='app' class="wrapper">  
     <!--{{msg}}-->
     <app-header></app-header>
+    
     <!-- Left side column. contains the logo and sidebar -->
-    <app-sidebar></app-sidebar>
+    <app-sidebar :menu='menu'></app-sidebar>
      <!-- Content Wrapper. Contains page content -->
     <app-content></app-content>
      <!-- /.content-wrapper -->
@@ -24,11 +25,12 @@
   import Content from './components/Content.vue'
   import Footer from './components/Footer.vue'
   import ControlSidebar from './components/ControlSidebar.vue'
-  import Side from './components/Side.vue'
+  import Menu from './components/Menu.vue'
 export default {
   data () {
     return {
-      msg: 'Hello Vue!'
+      msg: 'Hello Vue!',
+      menu: require('./config/menu.js')
     }
   },
   components: {
@@ -36,8 +38,8 @@ export default {
       'app-sidebar': MainSidebar,
       'app-content': Content,
       'app-footer': Footer,
-      'app-control-sidebar': ControlSidebar
-      
+      'app-control-sidebar': ControlSidebar,
+      'app-menu': Menu      
     }
 }
 </script>

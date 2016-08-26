@@ -7,7 +7,7 @@ module.exports = [
   {
     name: 'UI Elements',
     icon: 'fa-laptop',
-    child: [
+    children: [
       {
         name: 'General',
         link: '/ui/general',
