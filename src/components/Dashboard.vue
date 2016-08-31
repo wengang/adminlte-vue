@@ -819,3 +819,17 @@
         <!-- /.row -->
     </section>
 </template>
+<script>
+    export default {
+        // beforeRouteLeave (route, redirect, next) {
+        //     if (window.confirm('Not saved, are you sure you want to navigate away?')) {
+        //     next()
+        //     }
+        // },
+        methods: {
+            onleave(){
+                return window.confirm('are you sure leave?')
+            }
+        }
+    }
+</script>

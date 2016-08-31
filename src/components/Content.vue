@@ -23,15 +23,17 @@
 <script>
     import { bus } from './util'
     export default {
+        name: 'contentComponent',
         data (){
-            return {nbars:[]};
+            return {nbars:[{name: 'Home',icon: 'fa-home', link: '/'},{name: 'Dashboard'}]};
         },
         props: {
             title: String
         },
         created () {
+            var self=this;
             bus.$on('menu-switched',function(bars){
-                this.nbars=bars;
+                self.nbars = bars;
             })
         }
     }

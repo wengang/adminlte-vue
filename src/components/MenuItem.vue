@@ -1,5 +1,5 @@
 <template>
-    <li :class="liclass" @click='menuItemClicked'>
+    <li :class="liclass" @click.capture='menuItemClicked'>
         <template v-if='item.children'>
             <a href="#">
                 <i class="fa" :class="item.icon"></i>
@@ -9,7 +9,7 @@
             </span>
             </a>
             <ul class="treeview-menu">
-                <menu-item v-for='child in item.children' :item='child' :parents='navigationBars'></menu-item>
+                <menu-item v-for='child in item.children' :item='child' :parents='bars'></menu-item>
             </ul>
         </template>
         <template v-else>
@@ -25,27 +25,27 @@
 </template>
 <script>
    import { bus } from './util'
-   import _ from 'lodash/lang'
-   console.debug(bus)
-   var bars=null;
+   import _ from 'lodash/lang'  
+   
     export default {
         name: 'menu-item',
+        data(){
+            return {bars:[]}
+        },
         props: ['item','parents'],
         created () {
-             bars=_.clone(this.parents)
-             bars.push(this.item)
+             this.bars=_.clone(this.parents)
+             this.bars.push({name:this.item.name})            
         },
         computed: {
             liclass: function (){
                 return this.item.children?'treeview':''
             },
-            navigationBars: function(){
-               return bars;
-            }
+
         },
         methods: {
             menuItemClicked: function(){
-                bus.$emit('menu-switched',bars);
+                bus.$emit('menu-switched',this.bars);
             }
         }
 

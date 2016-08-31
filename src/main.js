@@ -3,8 +3,10 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import Dashboard from './components/Dashboard.vue'
 import NotFound from './components/NotFound.vue'
+// import RouteMixin from './routemixin'
 
 Vue.use(VueRouter)
+// Vue.mixin(RouteMixin)
 
 const router = new VueRouter({
   mode: 'history',
